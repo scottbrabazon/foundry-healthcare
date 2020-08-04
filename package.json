@@ -1,0 +1,21 @@
+{
+  "name": "foundryhealthcare-2016",
+  "version": "1.0.0",
+  "description": "Foundry Healthcare Craft CMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "foundry@git.foundrycomms.co.uk:foundryhealthcare-2016"
+  },
+  "author": "The Foundry",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}

@@ -1,0 +1,385 @@
+{% set title = "Approach" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+
+
+<!-- Masthead -->
+
+<header id="about-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+		{% for headline in entry.bannerHeadlines %}
+		<div class="headlines">
+			<div class="offset-underline">
+				<h3>{{ headline.pageTitle }}</h3>
+				<hr />
+			</div>
+			<h1>{{ headline.bannerHeadline }}</h1>
+		</div>
+		{% endfor %}
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<!-- Approach Nav -->
+
+<div id="approach-top-nav" class="main-container">
+	<ul class="flexbox section_tabs">
+		<li>
+			<a href="#listen-content" class="button-next flexbox hvr-bounce-to-right">
+				<p>Insight</p>
+			</a>
+		</li>
+		<li>
+			<a href="#plan-content" class="button-next flexbox hvr-bounce-to-right">
+				<p>Strategy</p>
+			</a>
+		</li>
+		<li>
+			<a href="#deliver-content" class="button-next flexbox hvr-bounce-to-right">
+				<p>Creativity</p>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<!-- End Approach Nav -->
+
+<!-- Listen -->
+
+<div class="main-container our-approach-content-copy">
+	<div id="listen-content" class="section_tab_content">
+		<div>
+
+			{% for listenIntroParagraph in entry.listenIntro %}
+
+			<div class="our-approach-intro-copy">
+				<div class="offset-underline">
+					<h2>{{ listenIntroParagraph.listenIntroHeadline }}</h2>
+					<hr />
+				</div>	
+
+				{{ listenIntroParagraph.listenIntroCopy }}
+
+			</div>
+
+			{% endfor %}
+
+		</div>
+		<div class="flexbox content tab-content-space">
+
+			{% for listenItemParagraph in entry.listenItem %}
+
+			<div id="listen-content-{{ listenItemParagraph.sortOrder }}" class="listen_tab_content">
+
+				<div class="offset-underline">
+					<h2>{{ listenItemParagraph.listenItemHeadline }}</h2>
+					<hr />
+				</div>	
+
+				{{ listenItemParagraph.listenItemCopy }}
+
+			</div>
+
+			{% endfor %}
+
+			<div id="listen-services-menu" class="services-menu">
+				<div class="offset-underline">
+					<h2>Services</h2>
+					<hr />
+				</div>	
+				<div class="services-links">
+					<ul class="listen_tabs">
+
+						{% for listenItemParagraph in entry.listenItem %}
+
+				        <li><a href="#listen-content-{{ listenItemParagraph.sortOrder }}">{{ listenItemParagraph.listenItemHeadline }}</a></li>
+
+				        {% endfor %}
+
+				    </ul>
+				</div>
+			</div>
+		</div>
+		<!-- Listen Nav Buttons -->
+		<div id="approach-nav-buttons">
+			<ul class="section_tabs flexbox">
+				<li class="flexbox previous-page">
+					<a href="#deliver-content" class="flexbox">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Deliver" />
+						<h2>&nbsp;&nbsp;Creativity</h2>
+					</a>
+				</li>
+				<li class="flexbox next-page">
+					<a href="#plan-content" class="flexbox">
+						<h2>Strategy&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Plan" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Listen Nav Buttons -->
+		<!-- Listen Fixed Nav Buttons -->
+		<div id="approach-fixed-nav-buttons">
+			<ul class="section_tabs flexbox approach-fixed-nav-buttons" data-350="opacity:0;" data-600="opacity:1;" data-1000="opacity:1;" data-1150="opacity:0;">
+				<li>
+					<a href="#deliver-content" class="nav-buttons flexbox fixed-previous-page">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Deliver" />
+						<h2>&nbsp;&nbsp;Creativity</h2>
+					</a>
+				</li>
+				<li class="fixed-spacer">
+					<h2>&nbsp;</h2>
+				</li>
+				<li>
+					<a href="#plan-content" class="nav-buttons flexbox fixed-next-page">
+						<h2>Strategy&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Plan" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Listen Fixed Nav Buttons -->
+	</div>
+</div>
+
+<!-- End Listen -->
+
+<!-- Plan -->
+
+<div class="main-container our-approach-content-copy">
+
+	<div id="plan-content" class="section_tab_content">
+		<div>
+
+			{% for planIntroParagraph in entry.planIntro %}
+
+			<div class="our-approach-intro-copy">
+
+				<div class="offset-underline">
+					<h2>{{ planIntroParagraph.planIntroHeadline }}</h2>
+					<hr />
+				</div>	
+
+				{{ planIntroParagraph.planIntroCopy }}
+
+			</div>
+
+			{% endfor %}
+
+		</div>
+		<div class="flexbox content tab-content-space">
+
+			{% for planItemParagraph in entry.planItem %}
+
+			<div id="plan-content-{{ planItemParagraph.sortOrder }}" class="plan_tab_content">
+
+				<div class="offset-underline">
+					<h2>{{ planItemParagraph.planItemHeadline }}</h2>
+					<hr />
+				</div>	
+				
+				{{ planItemParagraph.planItemCopy }}
+
+			</div>
+
+			{% endfor %}
+
+			<div id="plan-services-menu" class="services-menu">
+
+				<div class="offset-underline">
+					<h2>Services</h2>
+					<hr />
+				</div>
+
+				<div class="services-links">
+					<ul class="plan_tabs">
+
+				        {% for planItemParagraph in entry.planItem %}
+				        <li><a href="#plan-content-{{ planItemParagraph.sortOrder }}">{{ planItemParagraph.planItemHeadline }}</a></li>
+
+				        {% endfor %}
+
+				    </ul>
+				</div>
+			</div>
+		</div>
+		<!-- Plan Nav Buttons -->
+		<div id="approach-nav-buttons">
+			<ul class="section_tabs flexbox">
+				<li class="flexbox previous-page">
+					<a href="#listen-content" class="flexbox">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Listen" />
+						<h2>&nbsp;&nbsp;Insight</h2>
+					</a>
+				</li>
+				<li class="flexbox next-page">
+					<a href="#deliver-content" class="flexbox">
+						<h2>Creativity&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Deliver" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Plan Nav Buttons -->
+		<!-- Plan Fixed Nav Buttons -->
+		<div id="approach-fixed-nav-buttons">
+			<ul class="section_tabs flexbox approach-fixed-nav-buttons" data-350="opacity:0;" data-600="opacity:1;" data-1000="opacity:1;" data-1150="opacity:0;">
+				<li>
+					<a href="#listen-content" class="nav-buttons flexbox fixed-next-page">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Listen" />
+						<h2>&nbsp;&nbsp;Insight</h2>
+					</a>
+				</li>
+				<li class="fixed-spacer">
+					<h2>&nbsp;</h2>
+				</li>
+				<li>
+					<a href="#deliver-content" class="nav-buttons flexbox fixed-next-page">
+						<h2>Creativity&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Deliver" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Plan Fixed Nav Buttons -->
+	</div>
+</div>
+
+<!-- End Plan -->
+
+<!-- Deliver -->
+
+<div class="main-container our-approach-content-copy">
+
+	<div id="deliver-content" class="section_tab_content">
+		<div>
+
+			{% for deliverIntroParagraph in entry.deliverIntro %}
+
+			<div class="our-approach-intro-copy">
+
+				<div class="offset-underline">
+					<h2>{{ deliverIntroParagraph.deliverIntroHeadline }}</h2>
+					<hr />
+				</div>
+
+				{{ deliverIntroParagraph.deliverIntroCopy }}
+
+			</div>
+
+			{% endfor %}
+
+		</div>
+		<div class="flexbox content tab-content-space">
+
+			{% for deliverItemParagraph in entry.deliverItem %}
+
+			<div id="deliver-content-{{ deliverItemParagraph.sortOrder }}" class="deliver_tab_content">
+
+				<div class="offset-underline">
+					<h2>{{ deliverItemParagraph.deliverItemHeadline }}</h2>
+					<hr />
+				</div>
+
+				{{ deliverItemParagraph.deliverItemCopy }}
+
+			</div>
+
+			{% endfor %}
+
+			<div id="deliver-services-menu" class="services-menu">
+
+				<div class="offset-underline">
+					<h2>Services</h2>
+					<hr />
+				</div>
+
+				<div class="services-links">
+					<ul class="deliver_tabs">
+
+				        {% for deliverItemParagraph in entry.deliverItem %}
+
+				        <li><a href="#deliver-content-{{ deliverItemParagraph.sortOrder }}">{{ deliverItemParagraph.deliverItemHeadline }}</a></li>
+
+				        {% endfor %}
+				        
+				    </ul>
+				</div>
+			</div>
+		</div>
+		<!-- Listen Nav Buttons -->
+		<div id="approach-nav-buttons">
+			<ul class="section_tabs flexbox">
+				<li class="flexbox previous-page">
+					<a href="#plan-content" class="flexbox">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Plan" />
+						<h2>&nbsp;&nbsp;Strategy</h2>
+					</a>
+				</li>
+				<li class="flexbox next-page">
+					<a href="#listen-content" class="flexbox">
+						<h2>Insight&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Listen" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Listen Nav Buttons -->
+		<!-- Listen Fixed Nav Buttons -->
+		<div id="approach-fixed-nav-buttons">
+			<ul class="section_tabs flexbox approach-fixed-nav-buttons" data-350="opacity:0;" data-600="opacity:1;" data-1000="opacity:1;" data-1150="opacity:0;">
+				<li>
+					<a href="#plan-content" class="nav-buttons flexbox fixed-previous-page">
+						<img src="/img/buttons/big/arrow-left.svg" alt="Plan" />
+						<h2>&nbsp;&nbsp;Strategy</h2>
+					</a>
+				</li>
+				<li class="fixed-spacer">
+					<h2>&nbsp;</h2>
+				</li>
+				<li>
+					<a href="#listen-content" class="nav-buttons flexbox fixed-next-page">
+						<h2>Insight&nbsp;&nbsp;</h2>
+						<img src="/img/buttons/big/arrow-right.svg" alt="Listen" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- End Listen Fixed Nav Buttons -->
+	</div>
+</div>
+
+<!-- End Deliver -->
+
+<!-- Case Studes -->
+
+<div id="case-studies">
+	<div class="flexbox">
+		<hr /><h3>FEATURED&nbsp;WORK</h3><hr />
+	</div>
+	<div class="case-studes-examples clearfix">
+		{% for caseStudy in craft.entries.section('caseStudies').limit(6) %}
+		<div class="case-studes-example">
+			<a href="{{caseStudy.url}}">
+
+				{% if caseStudy.caseStudyPanelImage | length %}
+    			{% set image = caseStudy.caseStudyPanelImage.first() %}
+        			<img src="{{ image.url }}" alt="{{caseStudy.title}}">
+				{% endif %}
+
+				<div class="hvr-bounce-to-top project-name-panel">
+					<p class="project-info"><span class="project-client">{{caseStudy.title}}</span><br><span class="project-title">{{caseStudy.caseStudySubtitle}}</span></p>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<!-- End Case Studes -->
+
+{% endblock main %}

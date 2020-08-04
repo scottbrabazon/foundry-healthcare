@@ -1,0 +1,85 @@
+{% set title = "Contact Us" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+<header id="blog-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+		<div class="headlines">
+            <div class="offset-underline">
+    			<h3>News and Views</h3>
+                <hr />
+            </div>
+			<h1>Find out what makes us get out of bed in the morning, from industry insights to agency achievements.</h1>
+		</div>
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+
+<section id="recent-posts-index" class="main-container">
+
+{% paginate craft.entries().section("news").order('postDate desc').limit(6) as pageInfo, news %}
+
+{% set pageNav %}
+
+{% if pageInfo.totalPages >  0 %}
+
+    {% if pageInfo.nextUrl %}
+    <div class="older-newer hvr-bounce-to-right">
+        <a href="{{ pageInfo.nextUrl }}"><p>OLDER POSTS</p></a>
+    </div>
+    {% endif %}
+    {% if pageInfo.prevUrl %}
+    <div class="older-newer hvr-bounce-to-right">
+        <a href="{{ pageInfo.prevUrl }}" class="blog_paging_newer"><p>NEWER POSTS</p></a>
+    </div>
+    {% endif %}
+
+{% endif %}
+
+{% endset %}
+
+{% if not news | length %}
+<p>Sorry, there are no items currently available.</p>
+{% endif %}
+
+<section class="blog flexbox">
+
+{% for newsItem in news %}
+
+
+<article class="blog-post blog-post-list">
+
+<header>
+<h3 class="blog-post-title blog-post-title-list"><a href="{{ newsItem.url }}" rel="bookmark">{{ newsItem.title }}</a></h3>
+<p class="blog-post-meta">Posted by {{ newsItem.articleAuthor.first }}</p>
+</header>
+
+<div class="blog-post-body">
+    <div class="blog-index-image">
+    	{% set image = newsItem.articleMainImage.first() %}
+    	{% if image %}
+    	<a href="{{ newsItem.url }}" class="blog-post-image blog-post-image-list"><img src="{{ image.url }}" alt="{{ newsItem.title }}" /></a>
+    	{% endif %}
+    </div>
+    <p>{{ newsItem.articleSummary }}</p>
+    <div class="button-next">
+        <p><a href="{{ newsItem.url }}" />Read More</a></p>
+        <hr  />
+    </div>
+</div>
+
+</article>
+
+{% endfor %}
+
+{{ pageNav }}
+
+</section>
+
+</section>
+
+{% endblock main %}

@@ -1,0 +1,85 @@
+#contact-masthead.masthead {
+	background: #00a8df url("/img/backgrounds/general-background.jpg") no-repeat top center;
+	background-size: cover;
+	.masthead-content {width: 90%;}
+	p {color: #fff;}
+}
+
+.contact-details {
+	margin-top: 40px;
+	flex-direction: row;
+	justify-content: space-between;
+	a {color: #fff;}
+}
+
+.address, .telephone, .email {flex-direction: column; justify-content: flex-start;}
+.address img, .telephone img, .email img {align-self: flex-start; margin: 0 auto;}
+.address, .telephone {margin-bottom: 20px;}
+
+#map img {width: 100%;}
+#map {margin-top: 60px;}
+
+#enquiry-form {
+	margin: 60px auto 0 auto;
+	h1 {text-align: center;}
+	p {text-align: left;}
+	.button-next {@include black-button-small;}
+	.button-next:hover {@include rollover-button-small;}
+}
+
+.data-protection {
+	justify-content: flex-start;
+	input {
+		width: auto;
+		height: 14px;
+		margin-right: 10px;
+	}
+	label {
+		font-family: $foundry_baskerville;;
+	    font-size: 0.8em;
+	    line-height: 2.2em;
+	    margin: 0 0 1em 0;
+	    color: $foundry_grey;
+	}
+}
+
+#thank-you {
+	margin: 60px auto 0 auto;
+	width: 70%;
+	h1 {text-align: center;}
+}
+
+#careers {
+	clear: left;
+	h3 {margin-top: 60px;}
+	margin-bottom: 60px;
+}
+
+@media screen and (max-width: 800px) {
+	.contact-details {
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	#enquiry-form {
+		width: 90%;
+		h1 {text-align: left;}
+		p {text-align: left;}
+		.rule img {margin: 0 0 30px 0;}
+	}
+}
+@media screen and (min-width: 800px) {
+	.address, .telephone, .email {flex-direction: row;}
+	.address img, .telephone img, .email img {padding-right: 10px;}
+}
+@media screen and (min-width: 1000px) {
+	.address p, .telephone p, .email p {font-size: 1em;}
+}
+@media screen and (max-width: 1000px) {
+	.address, .telephone, .email {text-align: center;}
+}
+@media screen and (max-width: 1150px) {
+	#contact-masthead.masthead {
+		.masthead-content {width: 90%;}
+	}
+}

@@ -1,0 +1,72 @@
+{% set title = "Case Studies" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+<!-- Masthead -->
+
+<header id="work-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+		{% for headline in entry.bannerHeadlines %}
+		<div class="headlines">
+			<div class="offset-underline">
+				<h3>{{ headline.pageTitle }}</h3>
+				<hr />
+			</div>
+			<h1>{{ headline.bannerHeadline }}</h1>
+		</div>
+		{% endfor %}
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<!-- Case Studes -->
+
+<div id="case-studies">
+	<div class="case-studes-examples clearfix">
+
+		{% for caseStudy in craft.entries.section('caseStudies').limit(12) %}
+		
+		<div class="case-studes-example">
+			<a href="{{caseStudy.url}}">
+
+				{% if caseStudy.caseStudyPanelImage | length %}
+    			{% set image = caseStudy.caseStudyPanelImage.first() %}
+        			<img src="{{ image.url }}" alt="{{caseStudy.title}}">
+				{% endif %}
+
+				<div class="hvr-bounce-to-top project-name-panel">
+					<p class="project-info"><span class="project-client">{{caseStudy.title}}</span><br><span class="project-title">{{caseStudy.caseStudySubtitle}}</span></p>
+				</div>
+
+			</a>
+		</div>
+
+		{% endfor %}
+
+	</div>
+</div>
+
+<!-- End Case Studes -->
+
+<!-- Client Slider -->
+
+<div id="client-slider">
+	<section class="center slider">
+		{% set clients = craft.entries.section('clients') %}
+		{% for client in clients %}
+		<div>
+			{% if client.clientLogo | length %}
+			{% set image = client.clientLogo.first() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			{% endif %}
+		</div>
+		{% endfor %}
+	</section>
+</div>	
+
+<!-- End Client Slider -->
+
+{% endblock main %}

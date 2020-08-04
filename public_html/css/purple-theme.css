@@ -1,0 +1,101 @@
+/* purple theme for world stroke day */
+
+
+#navigation, #contact-details-footer {
+    background: #5b358c;
+}
+
+#navigation {
+  border-bottom: 1px solid #ddd;
+}
+
+.masthead, #about-masthead.masthead, #blog-masthead.masthead, #our-approach-masthead, #work-masthead.masthead, #approach-nav-buttons .previous-page, #contact-masthead.masthead, #approach-nav-buttons .next-page, .survey-panel {
+  background: #5A338E url(/img/backgrounds/general-background-purple.jpg) no-repeat bottom center;
+}
+
+.blog-post-author {
+  background-image: url(/img/backgrounds/general-background-purple.jpg);
+}
+
+
+#homepage-masthead.masthead {
+	background-color: #5A338E;
+}
+
+#footer {
+	background-color: rgba(91, 53, 140, 0.2);
+}
+
+.footer h2 {
+    color: #5b358c;
+}
+
+.footer-row-1 .button-next p, .footer-row-1 .button-next a, .footer-row-1 .button-next input[value="Send"] {
+	color: #5b358c;
+}
+
+.footer-row-1 .button-next hr, .offset-underline hr{
+    background: #5b358c;
+}
+
+.button-next p {
+  color: #5A338E !important;
+}
+
+.headlines .button-next p {
+  color: #FFF !important;
+}
+
+.button-next hr {
+  background-color: #5A338E !important;
+}
+
+.headlines .button-next hr {
+  background-color: #FFF !important;
+}
+
+#homepage-masthead.masthead video {
+  z-index: -2;
+}
+
+.video-overlay {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background-color: rgba(91, 53, 140, 0.6);
+  z-index: -1;
+  left: -50%;
+  top: 0;
+}
+
+.headlines--with-image {
+  width: 50%;
+  float: left;
+}
+
+.headlines-image {
+  width: 50%;
+  float: left;
+}
+
+.headlines-image img {
+  float: right;
+}
+
+.headlines--with-image h1 {
+    font-size: 2em;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.headlines--with-image .offset-underline h3 {
+    padding-right: 0px;
+    font-size: 1.5em;
+    font-family: "Gotham Bold";
+}
+
+.headlines--with-image .offset-underline hr {
+  width: 50%;
+  margin: 16px auto;
+  background-color: #FFF;
+}

@@ -1,0 +1,206 @@
+{% set title = "Contact Us" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+
+<!-- Masthead -->
+
+		<header id="contact-masthead" class="masthead flexbox">
+			<div class="masthead-content main-container flexbox">
+				<div class="headlines">
+					<div class="offset-underline">
+						<h3>Contact Us</h3>
+						<hr />
+					</div>
+					<div class="contact-details flexbox">
+						<div class="address flexbox">
+							<img src="/img/address.svg" alt="Address" />
+							<p> {{ companyDetails.postalAddress | raw }} </p>
+						</div>
+						<div class="telephone flexbox">
+							<img src="/img/telephone.svg" alt="Telephone" />
+							<a href="tel:+{{ companyDetails.phoneNumber }}"><p>{{ companyDetails.phoneNumber }}</p></a>
+						</div>
+						<div class="email flexbox">
+							<img src="/img/email.svg" alt="Email" />
+							<a href="mailto:{{ companyDetails.emailAddress }}"><p>{{ companyDetails.emailAddress }}</p></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- End Masthead -->
+
+		<!-- Map -->
+
+		<section id="map" class="main-container">
+			<div id="map-display" class="map centered" style="width: 100%; height: 400px;"></div>
+		    <script>
+		      function initMap() {
+		        var foundry = {lat: 53.3851084, lng: -2.3501915};
+            //53.385189,-2.3507242
+            //53.3851084,-2.3501915
+		        var map = new google.maps.Map(document.getElementById('map-display'), {
+		          zoom: 15,
+		          center: foundry
+		        });
+		        var marker = new google.maps.Marker({
+		          position: foundry,
+		          map: map
+		        });
+		      }
+		    </script>
+		    <script async defer
+		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnR2BfgTMn0ThTvhSs1v0xc4qvgXU0sgA&callback=initMap">
+		    </script>
+		</section>
+
+		<!-- section id="map">
+			<div class="map centered">
+				<div>
+				<img id="cmsmap17-1" src="//maps.google.com/maps/api/staticmap?key=AIzaSyAd9AbybcLwk5Oo61zLP_6GHkwMP0ahBfY&amp;center=53.38470350000001,-2.350081600000067&amp;size=100%x400&amp;scale=2&amp;zoom=15&amp;maptype=map&amp;markers=color:red|color:red|53.38470350000001,-2.350081600000067"  width="100%" height="400" alt="The Foundry Communications 3 Denmark Street, Altrincham Cheshire WA14 2SS" /><script type="text/javascript">/* <![CDATA[ */ if(typeof CMSMap =='undefined'){var CMSMap={};CMSMap.maps=[];document.write('<scr'+'ipt type="text\/javascript" src="/perch/core/assets/js/public_maps.min.js"><'+'\/sc'+'ript>');}CMSMap.maps.push({'mapid':'cmsmap17-1','width':'100%','height':'400','type':'map','zoom':'15','adr':'The Foundry Communications 3 Denmark Street, Altrincham Cheshire WA14 2SS','lat':'53.38470350000001','lng':'-2.350081600000067','clat':'53.38470350000001','clng':'-2.350081600000067'});CMSMap.key='AIzaSyAd9AbybcLwk5Oo61zLP_6GHkwMP0ahBfY';/* ]]> */</script>
+				</div>
+			</div>
+		</section -->
+
+		<!-- End Map -->
+
+		<!-- Enquiry Form -->
+
+		{% if craft.request.getParam("message") != "thankyou" %}
+
+		<section id="enquiry-form" class="main-container">
+			
+			<form method="post" action="" accept-charset="UTF-8" class="inner-container">
+
+	
+			    {{ getCsrfInput() }}
+
+				{# This should always be here! #}
+			    <input type="hidden" name="action" value="amForms/submissions/saveSubmission">
+
+			    {# Insert your form's handle. #}
+			    <input type="hidden" name="handle" value="contact">
+
+			    {# Optional: Redirect URL. Will redirect to current page by default. #}
+			    <input type="hidden" name="redirect" value="{{ craft.request.getSegment(1) }}?message=thankyou">
+
+			    {# Optional: Anti-spam protection. #}
+			    {{ craft.amForms.displayAntispam() }}
+
+
+			    {# Place the HTML of your fields here #}
+
+				<div class="offset-underline">
+					<h2>Make an enquiry</h2>
+					<hr />
+				</div>	
+
+				<p>Send us a message. Fill in your details and we'll be in touch as soon as possible.</p>
+
+				<fieldset>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-fullName">Name:</label>
+						<input id="fields-fullName" name="fields[fullName]" type="text" required="required" autocomplete="nope" />
+					</div>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-companyPosition">Position:</label>
+						<input id="fields-companyPosition" name="fields[companyPosition]" type="text" required="required" autocomplete="nope" />
+					</div>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-company">Company:</label>
+						<input id="fields-company" name="fields[company]" type="text" required="required" autocomplete="nope" />
+					</div>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-emailAddress">Email:</label>
+						<input id="fields-emailAddress" name="fields[emailAddress]" type="text" required="required" autocomplete="nope" />
+					</div>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-telephoneNumber">Telephone:</label>
+						<input id="fields-telephoneNumber" name="fields[telephoneNumber]" type="text" required="required" autocomplete="nope" />
+					</div>
+
+					<div class="form-field flexbox">
+						<label class="required" for="fields-message">Message:</label>
+						<textarea id="fields-message" name="fields[message]" required="required"></textarea>
+					</div>
+
+					<div class="data-protection flexbox">
+            <input type="hidden" name="fields[userOptin]" value="">
+						<input id="fields-userOptin" name="fields[userOptin][]" value="yes" type="checkbox" required="required" />
+						<label class="required" for="fields-userOptin">Please confirm, by ticking the box, that you are happy for The Foundry to keep your personal details on our database in order to provide you with the information you have requested above.</label>
+					</div>
+
+					<div class="data-protection flexbox">
+            <input type="hidden" name="fields[acceptPrivacy]" value="">
+						<input id="fields-acceptPrivacy" name="fields[acceptPrivacy][]" value="yes" type="checkbox" required="required" />
+						<label class="required" for="fields-acceptPrivacy">I confirm by ticking this box that I have read and accepted the <a href="/privacy-policy/">privacy policy</a>.</label>
+					</div>
+
+					<div class="data-protection flexbox">
+            <input type="hidden" name="fields[joinNewsletter]" value="">
+						<input id="fields-joinNewsletter" name="fields[joinNewsletter][]" value="yes" type="checkbox" />
+						<label class="required" for="fields-joinNewsletter"><strong>Want to join our eNewsletter?</strong> Please confirm, by ticking the box, that you are happy for The Foundry to keep your personal details on our database in order to send you relevant information about our services and latest news about The Foundry.</label>
+					</div>
+
+					<div class="data-protection">
+						<p>You are entitled to withdraw you consent at any time. If you wish to withdraw your consent, please contact us either by email: <a href="mailto:dataprotection@foundrycomms.co.uk">dataprotection@foundrycomms.co.uk</a> or write to us at our company address: The Foundry Communications, 3 Denmark Street, Altrincham, Cheshire, WA14 2SS.</p>
+					</div>
+
+					<div class="hvr-bounce-to-right button-next">
+						<input name="submit" value="Send" type="submit" />
+					</div>
+
+				</fieldset>
+			    
+			</form>
+
+
+		</section>
+		
+		{% else %}
+
+		<section id="thank-you" class="main-container">
+			<div class="inner-container">
+				<div class="offset-underline">
+					<h3>Thank you for your enquiry<br>We will be in touch very soon</h3>
+					<hr />
+				</div>
+			</div>
+		</section>
+    	
+    	{% endif %}
+
+
+		<!-- End Enquiry Form -->
+
+		<!-- Careers -->
+
+		<section id="careers" class="main-container">
+			<div class="inner-container">
+
+				{% for paragraph in entry.generalParagraph %}
+
+				<div class="offset-underline">
+					<h3>{{ paragraph.paragraphHeadline }}</h3>
+					<hr />
+				</div>
+
+				{{ paragraph.paragraphCopy }}
+
+				{% endfor %}
+				
+			</div>
+		</section>
+
+		<!-- End Careers -->
+
+{% endblock main %}

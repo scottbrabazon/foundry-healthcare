@@ -1,0 +1,131 @@
+{% set title = "Work" %}
+
+{# work out previous and next pieces of work #}
+
+{% set nextEntry = entry.nextSibling %}
+{% if nextEntry is empty %}
+{% set nextEntry = entry.siblings(entry).first() %}
+{% endif %}
+
+{% set prevEntry = entry.prevSibling %}
+{% if prevEntry is empty %}
+{% set prevEntry = entry.siblings.last() %}
+{% endif %}
+
+{% extends "_layouts/site" %}
+
+{% block inlineCss %}
+
+
+
+<style>
+
+{% if entry.workBackgroundImage | length %}
+{% set image = entry.workBackgroundImage.first() %}
+	#{{ entry.slug }}-masthead {
+		background: black url( {{ image.url }} ) no-repeat bottom center;
+		background-size: cover;
+	}
+{% endif %}
+
+</style>
+
+{% endblock %}
+
+{% block main %}
+
+<!-- Masthead -->
+
+<header id="{{ entry.slug }}-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+
+		<div class="headlines">
+			<h3>{{ entry.workClient | raw }}</h3>
+			<div class="offset-underline">
+				<h3>{{ entry.workProject | raw }}</h3>
+				<hr />
+			</div>
+			<h1>{{ entry.workTeaser | raw }}</h1>
+		</div>
+
+		<div class="client-logo">
+
+			{% if entry.clientLogo | length %}
+			{% set image = entry.clientLogo.first() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			{% endif %}
+
+		</div>
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<!-- Intro Copy -->
+
+<section class="main-container">
+	<div class="centered intoduction-paragraph">
+		{{ entry.workIntroduction }}
+	</div>
+</section>
+
+<!-- End Intro Copy -->
+
+<!-- Images -->
+
+<section class="main-container">
+
+{% for workImages in entry.workExampleImages %}
+
+	{% if workImages.workImage | length %}
+	{% set image = workImages.workImage.first() %}
+
+	<div class="work">
+		<img src="{{ image.url }}">
+	</div>
+
+	{% endif %}
+
+{% endfor %}
+
+{% if entry.workVideo %}
+
+<div class="blog-post-video">
+		<div class="embed-container">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/{{ entry.workVideo }}?modestbranding=1&amp;rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+
+{% endif %}
+
+</section>
+
+<!-- End Images -->
+
+<!-- Fixed Nav Buttons -->
+
+<!-- <div id="work-fixed-nav-buttons">
+	<ul class="section_tabs flexbox work-fixed-nav-buttons" data-350="opacity:0;" data-600="opacity:1;" data-5000="opacity:1;" data-5150="opacity:0;">
+		<li>
+			<a href="{{ prevEntry.url }}" class="nav-buttons flexbox fixed-previous-page">
+				<img src="/img/buttons/big/arrow-left.svg" alt="Prev" />
+				<h2>&nbsp;&nbsp;Prev</h2>
+			</a>
+		</li>
+		<div class="fixed-spacer">
+			<h2>&nbsp;</h2>
+		</div>
+		<li>
+			<a href="{{ nextEntry.url }}" class="nav-buttons flexbox fixed-next-page">
+				<h2>Next&nbsp;&nbsp;</h2>
+				<img src="/img/buttons/big/arrow-right.svg" alt="Next" />
+			</a>
+		</li>
+	</ul>
+</div> -->
+
+<!-- End Fixed Nav Buttons -->
+
+{% endblock main %}
+
+

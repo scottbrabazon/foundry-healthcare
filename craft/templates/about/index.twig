@@ -1,0 +1,164 @@
+{% set title = "About" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+<!-- Masthead -->
+
+<header id="about-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+		{% for headline in entry.bannerHeadlines %}
+		<div class="headlines">
+			<div class="offset-underline">
+				<h3>{{ headline.pageTitle }}</h3>
+				<hr />
+			</div>
+			<h1>{{ headline.bannerHeadline }}</h1>
+		</div>
+		{% endfor %}
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<!-- Since 1998 -->
+
+{% for paragraph in entry.generalParagraph %}
+<section id="who-we-are" class="main-container">
+	<div class="centered">
+		{{ paragraph.paragraphCopy }}
+	</div>
+</section>
+{% endfor %}
+
+<!-- End Since 1998 -->
+
+<!-- Our people -->
+
+<section id="our-people" class="main-container">
+	<div class="centered">
+		<div class="offset-underline">
+			<h2>Our People</h2>
+			<hr />
+		</div>
+	</div>
+
+	{% for mainStaff in entry.mainStaffPanel %}
+
+	<div class="main-person-panel flexbox">
+
+		{% if mainStaff.mainStaffImage | length %}
+		{% set image = mainStaff.mainStaffImage.first() %}
+
+			<img class="main-person-image" src="{{ image.url }}">
+
+		{% endif %}
+
+		<div class="main-person-copy">
+
+			{{ mainStaff.mainStaffCopy }}
+
+		</div>
+	</div>
+
+	{% endfor %}
+
+	<div class="people clearfix">
+		
+		{% set staff = craft.entries.section('staff').staffGuest('not 1').id('not 686').order('title') %}
+
+		{% for staffMember in staff %}
+		<div class="hvr-bounce-to-right-person person">
+			<div class="person-image">
+
+				{% if staffMember.staffImage | length %}
+    			{% set image = staffMember.staffImage.first() %}
+        			<img src="{{ image.url }}">
+				{% endif %}
+
+				<div class="person-biography flexbox">
+					{{ staffMember.staffBiography }}
+				</div>
+			</div>
+			<div class="person-name-panel hvr-bounce-to-right-person">
+				<p><span class="person-name">{{staffMember.staffName}}</span><br><span class="job-title">{{staffMember.staffPosition}}</span></p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<!-- End Our People -->
+
+<!-- Our Clients -->
+
+<section id="our-clients">
+	<div class="main-container">
+		<div class="offset-underline">
+			<h2>Our Clients</h2>
+			<hr />
+		</div>
+		<div class="client-logos-panel flexbox">
+
+			{% set clients = craft.entries.section('clients').order('title') %}
+			{% for client in clients %}
+
+			<div class="client-logos">
+
+				{% if client.clientLogo | length %}
+    			{% set image = client.clientLogo.first() %}
+        			<img src="{{ image.url }}">
+				{% endif %}
+				
+			</div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+</section>
+
+<!-- End Our Clients -->
+
+<!-- Our Awards -->
+
+<section id="our-awards">
+	<div class="main-container">
+		<div class="centered">
+			<div class="offset-underline">
+				<h3>Our Awards</h3>
+				<hr />
+			</div>
+			<p>Our healthcare clients value effectiveness over creativity. We’re proud to say we are internationally acknowledged for both.</p>
+		</div>
+		<div class="awards-panel flexbox">
+
+			{% set awards = craft.entries.section('awards').order('title') %}
+			{% for award in awards %}
+
+			<div class="awards">
+
+				{% if award.awardImage | length %}
+    			{% set image = award.awardImage.first() %}
+        			<img src="{{ image.url }}">
+				{% endif %}
+
+				<div class="award-biography flexbox">
+					<p>{{ award }}</p>
+				</div>
+
+			</div>
+
+			{% endfor %}
+			
+		</div>
+	</div>
+</section>
+
+<!-- End Our Awards -->
+
+
+
+
+{% endblock main %}

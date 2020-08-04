@@ -1,0 +1,128 @@
+{% set pageTitle = entry.title %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+
+<section id="posts" class="content content-lead-primary main-container">
+
+<section class="column primary">
+				
+<section class="blog">
+
+
+<article class="blog-post">
+
+<header>
+
+<h1 class="blog-post-title">{{ entry.title }}</h1>
+
+<p class="blog-post-meta">Posted on {{ entry.postDate | date("l F j, Y") }}.</p>
+
+</header>
+
+<div class="blog-post-body">
+
+{# if the first block in the article body is an image or a video then don't use the main image #}
+
+{% set firstBlock = entry.articleBody.first() %}
+
+{% if firstBlock.type != "video" and firstBlock.type != "image" %}
+
+{% set image = entry.articleMainImage.first() %}
+{% if image %}
+	<div class="blog-post-image">
+		<img src="{{ image.url }}" alt="{{ image.title }}">
+	</div>
+{% endif %}
+
+{% endif %}
+
+
+{% for contentBlock in entry.articleBody %}
+
+	{% if contentBlock.type == "heading" %}
+
+		<h3>{{ contentBlock.heading }}</h3>
+
+	{% elseif contentBlock.type == "copy" %}
+
+		{{ contentBlock.text }}
+
+	{% elseif contentBlock.type == "video" %}
+
+		<div class="blog-post-video">
+			<div class="embed-container">
+				<iframe width="420" height="315" src="https://www.youtube.com/embed/{{ contentBlock.videoId }}?modestbranding=1&amp;rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+
+	{% elseif contentBlock.type == "highlightPanel" %}
+
+		<div class="attractor-panel">
+
+			<h3>{{ contentBlock.headline }}</h3>
+
+			{{ contentBlock.copy }}
+
+		</div>
+
+	{% elseif contentBlock.type == "image" %}
+
+	{% set image = contentBlock.image.first() %}
+	{% if image %}
+
+		{% if loop.first %}
+			<div class="blog-post-image">
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			</div>
+		{% else %}
+			<p>
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			</p>
+		{% endif %}
+
+	{% endif %}
+
+	{% elseif contentBlock.type == "blockquote" %}
+
+	<blockquote>
+	    <p>{{ contentBlock.quote }}</p>
+	    <cite>– {{ contentBlock.source }}</cite>
+	</blockquote>
+
+	{% endif %}
+
+
+{% endfor %}
+
+</article>
+
+</section>
+
+<div class="addthis_inline_share_toolbox"></div>
+
+</section> <!-- primary -->
+
+
+{% if entry.articleAuthor | length %}
+
+{% set author = entry.articleAuthor.first() %}
+
+<div class="blog-post-author flexbox">
+{% if author.staffImage | length %}
+	{% set authorImage = author.staffImage.first() %}
+	<img alt="{{ author.staffName }}" class="author_image" src="{{ authorImage.url }}" />
+{% endif %}
+<div class="author_name">
+<h2>{{ author.staffName }}</h2>
+{{ author.staffBiography }}
+</div>
+</div>
+
+{% endif %}
+
+</section>
+
+{% endblock main %}

@@ -1,0 +1,122 @@
+{% extends "_layouts/base" %}
+
+{% block body %}
+
+{% set segment_1 = craft.request.firstSegment %}
+
+<div id="navigation">
+	<div class="navigation-panel flexbox main-container">
+		<div class="logo">
+			<a href="/"><img src="/img/foundry-healthcare-logo.svg" alt="The Foundry Healthcare"></a>
+		</div>
+		<div class="flexbox navigation-menu-mobile">
+			<div class="menu-toggle-button">
+				<img src="/img/menu.svg" alt="Menu">
+			</div>
+		 	<ul class="menu-links-mobile">
+				<li><a href="/about"{% if segment_1 == "about" %} class="active"{% endif %}>About</a></li>
+				<li><a href="/case-studies"{% if segment_1 == "case-studies" %} class="active"{% endif %}>Case Studies</a></li>
+				<li><a href="/work"{% if segment_1 == "work" %} class="active"{% endif %}>Work</a></li>
+				<li><a href="/approach"{% if segment_1 == "approach" %} class="active"{% endif %}>Approach</a></li>
+				<!-- <li><a href="/contact"{% if segment_1 == "contact" %} class="active"{% endif %}>Services</a></li> -->
+				<li><a href="/contact"{% if segment_1 == "contact" %} class="active"{% endif %}>Contact</a></li>
+				<li><a href="/blog/"{% if segment_1 == "blog" %} class="active"{% endif %}>Blog</a></li>
+				<li class="fhc-nav"><a href="https://www.foundrycomms.co.uk//">Foundry Communications</a></li>
+				<li class="bia-nav"><a href="https://www.brandinaction.com/">Brand in Action</a></li>
+		 	</ul>
+		</div>
+		<div class="flexbox navigation-menu">
+		 	<ul class="menu-links flexbox">
+				<li><a href="/about"{% if segment_1 == "about" %} class="active"{% endif %}>About</a></li>
+				<li><a href="/case-studies"{% if segment_1 == "case-studies" %} class="active"{% endif %}>Case Studies</a></li>
+				<li><a href="/work"{% if segment_1 == "work" %} class="active"{% endif %}>Work</a></li>
+				<li><a href="/approach"{% if segment_1 == "approach" %} class="active"{% endif %}>Approach</a></li>
+				<!-- <li><a href="/contact"{% if segment_1 == "contact" %} class="active"{% endif %}>Services</a></li>  -->
+				<li><a href="/contact"{% if segment_1 == "contact" %} class="active"{% endif %}>Contact</a></li>
+				<li><a href="/blog/"{% if segment_1 == "blog" %} class="active"{% endif %}>Blog</a></li>
+				<li class="fhc-nav hvr-bounce-to-right flexbox"><a href="https://www.foundrycomms.co.uk//">FOUNDRY COMMUNICATIONS</a></li>
+				<li class="bia-nav hvr-bounce-to-right flexbox"><a href="https://www.brandinaction.com/">BRAND IN ACTION</a></li>
+		 	</ul>
+		</div>
+	</div>	
+</div>
+
+{% block main %}{% endblock main %}
+
+{% block footer_home %}
+
+<!-- Footer -->
+
+<div id="footer" class="background">
+	<div class="footer flexbox main-container">
+		<div class="footer-row-1">
+
+			{% set news = craft.entries().section("news").order('postDate desc').limit(3) %}
+
+			<ul class="hfeed listing flexbox">
+
+				{% for newsItem in news %}
+
+			    <li class="hentry">
+			        <div class="footer-item">
+			            <div class="offset-underline">
+							<h2>Blog</h2>
+							<hr />
+						</div>
+			            <h4><a href="{{ newsItem.url }}" rel="bookmark" class="entry-title">{{ newsItem.title }}</a></h4>
+			            <p class="blog-post-meta">Posted by {{ newsItem.articleAuthor.first }}</p>			                
+			            <p>{{ newsItem.articleSummary }}</p>
+			            
+			            <a href="{{ newsItem.url }}">
+			                <div class="button-next">
+								<p>Read More</p>
+								<hr  />
+							</div>
+			            </a>
+			        </div>
+			    </li>
+
+			    {% endfor %}
+
+		    </ul>
+
+			
+	    </div>
+	</div>
+</div>
+
+<div id="contact-details-footer">
+	<div class="footer flexbox main-container">
+	    <div class="footer-row-2 flexbox">
+			<p class="contact-number">
+				<span>Contact</span> <a href="tel:+441619268444">{{ companyDetails.phoneNumber | raw }}</a><br/>
+				<a href="/privacy-policy">View our privacy policy</a>
+			</p>
+			<div class="social">
+				<a href="https://twitter.com/foundryhealth" target="_blank">
+					<img src="/img/social/twitter.svg" alt="Twitter" />
+				</a>
+				<a href="https://www.linkedin.com/company/foundry-healthcare" target="_blank">
+					<img src="/img/social/linkedin.svg" alt="LinkedIn" />
+				</a>
+				<a href="https://www.youtube.com/FoundryHealthcare" target="_blank">
+					<img src="/img/social/you-tube.svg" alt="YouTube" />
+				</a>
+			</div>
+			<div class="enquiry-button flexbox">
+				<a href="/contact">
+					<div class="button-next">
+						<p>Make Enquiry</p>
+						<hr  />
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- End Footer -->
+
+{% endblock footer_home %}
+
+{% endblock body %}

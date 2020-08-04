@@ -1,0 +1,156 @@
+#case-studies {
+	width: 100%;
+	max-width: 1075px;
+	margin: 60px auto;
+	position: relative; z-index: 500;
+	hr {background: $foundry_grey; width: 100%; margin: 8px 0 0 0;}
+	h3 {color: $foundry_grey; font-size: 0.8em; margin: 0 20px 0 20px;}
+}
+
+#case-studies.white-border {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-style: solid;
+    border-width: 60px 0;
+    border-color: #fff;
+    background: #fff;
+}
+
+.case-studes-examples {
+	margin-top: 30px;
+	flex-direction: column;
+	div {display:block; position:relative; overflow:hidden;}
+	img {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.case-studes-example {
+	margin-top: 20px;
+}
+
+.project-name-panel {
+	display: none;
+	padding: 10px 0 10px 0;
+	background: none;
+	width: 100%;
+	position: absolute !important;
+	bottom: 0;
+	left: 0;
+	height: 670px;
+}
+
+.project-info {
+	text-align: left;
+	padding: 30px 30px 30px 30px;
+	margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+	color: #fff;
+    font-size: 0.85em;
+    line-height: 1.4em;
+	position:absolute;
+	bottom:0;
+	z-index:1000;
+	visibility:hidden;
+	.project-client {font-family: $foundry_extra_bold; text-transform: uppercase; color:white;}
+	.project-title {font-family: $foundry_caecilia; color: white; line-height: 1.5em; font-size: 1.1em;}
+}
+
+@media screen and (max-width: 650px) {
+  .project-info {
+    padding: 16px;
+    background-color: rgba(0, 168, 233, 0.8);
+    visibility: visible;
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 650px) {
+	.case-studes-example {
+		float: left;
+		overflow: hidden;
+	}
+	.case-studes-example:nth-child(1) {margin: 0 2% 0 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(2) {margin: 0 2% 0 0; width: 32%; height: 220px;}
+	.case-studes-example:nth-child(3) {margin: 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(4) {margin: 0 2% 0 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(5) {margin: 0 2% 0 0; width: 32%; height: 194px; margin-top: 13px;}
+	.case-studes-example:nth-child(6) {margin: 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(1).project-name-panel {height: 207px;}
+	.case-studes-example:nth-child(2).project-name-panel {height: 220px;}
+	.case-studes-example:nth-child(3).project-name-panel {height: 207px;}
+	.case-studes-example:nth-child(4).project-name-panel {height: 207px;}
+	.case-studes-example:nth-child(5).project-name-panel {height: 194px; margin-top: 13px;}
+	.case-studes-example:nth-child(6).project-name-panel {height: 207px;}
+
+	.case-studes-example:nth-child(6n+7) {margin: 0 2% 0 0; width: 32%; height: 207px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+8) {margin: 0 2% 0 0; width: 32%; height: 220px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+9) {margin: 0; width: 32%; height: 207px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+10) {margin: 0 2% 0 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(6n+11) {margin: 0 2% 0 0; width: 32%; height: 194px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+12) {margin: 0; width: 32%; height: 207px;}
+	.case-studes-example:nth-child(6n+7).project-name-panel {height: 207px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+8).project-name-panel {height: 220px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+9).project-name-panel {height: 207px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+10).project-name-panel {height: 207px;}
+	.case-studes-example:nth-child(6n+11).project-name-panel {height: 194px; margin-top: 13px;}
+	.case-studes-example:nth-child(6n+12).project-name-panel {height: 207px;}
+
+	.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.project-name-panel {float: none;}
+}
+
+@media screen and (min-width: 810px) {
+	.case-studes-example:nth-child(1), .project-name-panel {height: 259px;}
+	.case-studes-example:nth-child(2), .project-name-panel {height: 275px;}
+	.case-studes-example:nth-child(3), .project-name-panel {height: 259px;}
+	.case-studes-example:nth-child(4), .project-name-panel {height: 259px;}
+	.case-studes-example:nth-child(5), .project-name-panel {height: 243px; margin-top: 16px;}
+	.case-studes-example:nth-child(6), .project-name-panel {height: 259px;}
+
+	.case-studes-example:nth-child(6n+7), .project-name-panel {height: 259px; margin-top: 16px;}
+	.case-studes-example:nth-child(6n+8), .project-name-panel {height: 275px; margin-top: 16px;}
+	.case-studes-example:nth-child(6n+9), .project-name-panel {height: 259px; margin-top: 16px;}
+	.case-studes-example:nth-child(6n+10), .project-name-panel {height: 259px;}
+	.case-studes-example:nth-child(6n+11), .project-name-panel {height: 243px; margin-top: 16px;}
+	.case-studes-example:nth-child(6n+12), .project-name-panel {height: 259px;}
+}
+
+@media screen and (min-width: 950px) {
+	.case-studes-example:nth-child(1), .project-name-panel {height: 304px;}
+	.case-studes-example:nth-child(2), .project-name-panel {height: 323px;}
+	.case-studes-example:nth-child(3), .project-name-panel {height: 304px;}
+	.case-studes-example:nth-child(4), .project-name-panel {height: 304px;}
+	.case-studes-example:nth-child(5), .project-name-panel {height: 285px; margin-top: 19px;}
+	.case-studes-example:nth-child(6), .project-name-panel {height: 304px;}
+
+	.case-studes-example:nth-child(6n+7), .project-name-panel {height: 304px; margin-top: 19px;}
+	.case-studes-example:nth-child(6n+8), .project-name-panel {height: 323px; margin-top: 19px;}
+	.case-studes-example:nth-child(6n+9), .project-name-panel {height: 304px; margin-top: 19px;}
+	.case-studes-example:nth-child(6n+10), .project-name-panel {height: 304px;}
+	.case-studes-example:nth-child(6n+11), .project-name-panel {height: 285px; margin-top: 19px;}
+	.case-studes-example:nth-child(6n+12), .project-name-panel {height: 304px;}
+}
+
+@media screen and (min-width: 1075px) {
+	.case-studes-example:nth-child(1), .project-name-panel {height: 346px;}
+	.case-studes-example:nth-child(2), .project-name-panel {height: 367px;}
+	.case-studes-example:nth-child(3), .project-name-panel {height: 346px;}
+	.case-studes-example:nth-child(4), .project-name-panel {height: 346px;}
+	.case-studes-example:nth-child(5), .project-name-panel {height: 325px; margin-top: 21px;}
+	.case-studes-example:nth-child(6), .project-name-panel {height: 346px;}
+
+	.case-studes-example:nth-child(6n+7), .project-name-panel {height: 346px; margin-top: 21px;}
+	.case-studes-example:nth-child(6n+8), .project-name-panel {height: 367px; margin-top: 21px;}
+	.case-studes-example:nth-child(6n+9), .project-name-panel {height: 346px; margin-top: 21px;}
+	.case-studes-example:nth-child(6n+10), .project-name-panel {height: 346px;}
+	.case-studes-example:nth-child(6n+11), .project-name-panel {height: 325px; margin-top: 21px;}
+	.case-studes-example:nth-child(6n+12), .project-name-panel {height: 346px;}
+}

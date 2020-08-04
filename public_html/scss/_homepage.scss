@@ -1,0 +1,208 @@
+/* Masthead */
+
+#homepage-masthead.masthead {
+	background: none; 
+  position: relative;
+  overflow: hidden;
+	.button-next {@include white-button-small; margin-top: 40px;}
+	.masthead-content {
+    width: 90%;
+    /*
+    max-width: 1075px;
+    margin-left: auto;
+    margin-right: auto;
+    */
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #homepage-masthead.masthead {
+    /*margin-top: 120px;*/
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #homepage-masthead.masthead {
+    /*margin-top: 170px;*/
+    video {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #homepage-masthead.masthead {
+    /*margin-top: 200px;*/
+  }
+}
+
+.video-masthead {
+	pointer-events: none;
+	width: 100%;
+	/*height: 600px;*/
+  max-height: 600px;
+	overflow: hidden;
+  position: absolute;
+  top: 0;
+	z-index: -100;
+	video {
+		width: 895px;
+	}
+}
+.gif-masthead-450px, .gif-masthead-750px, .gif-masthead-1090px {
+	pointer-events: none;
+	width: 100%;
+	overflow: hidden;
+	img {width: 100%;}
+}
+
+@media screen and (min-width: 890px) {
+  .video-masthead {
+  	video {
+  		width: 100%;
+  	}
+  }
+}
+
+/*
+.video-masthead {display: none; width: 100%;}
+.gif-masthead-450px {display: initial;}
+.gif-masthead-750px {display: none;}
+.gif-masthead-1090px {display: none;}
+
+@media screen and (min-width: 450px) {
+	.video-masthead {display: none;}
+	.gif-masthead-450px {display: none;}
+	.gif-masthead-750px {display: initial;}
+	.gif-masthead-1090px {display: none;}
+}
+@media screen and (min-width: 750px) {
+	.video-masthead {display: none;}
+	.gif-masthead-450px {display: none;}
+	.gif-masthead-750px {display: none;}
+	.gif-masthead-1090px {display: initial;}
+}
+@media screen and (min-width: 1090px) {
+	.video-masthead {display: block;}
+	.gif-masthead-450px {display: none;}
+	.gif-masthead-750px {display: none;}
+	.gif-masthead-1090px {display: none;}
+}
+*/
+
+/* Intro */
+
+#homepage-intro-copy {
+	margin-top: 60px;
+	.button-next {@include blue-button-small;}
+	.survey-panel {
+		.button-next {@include white-button-small;}
+	}
+}
+.top-row {flex-direction: column;}
+.groupthree {flex-direction: column;}
+.groupthree > div {margin-top: 60px;}
+.problem-solved {
+	flex-direction: column;
+	flex-grow: 2;
+	text-align: left; 
+	margin: 0; 
+	width: 100%;
+	.rule img {margin-left: 0;}
+}
+.groupthree-content {
+	flex-direction: column;
+	p:first-of-type {font-size: 1.2em; line-height: 1.8em;}
+}
+.survey-panel {
+	background: #00a8df url("/img/backgrounds/general-background.jpg") no-repeat top center; 
+	order: -1;
+	padding: 20px;
+	h2, p {color: #fff;}
+	h2 {font-family: $foundry_baskerville; text-transform: none; line-height: 1.5em; font-size: 1.5em; margin-bottom: 20px}
+	margin-bottom: 60px;
+}
+
+
+@media screen and (min-width: 800px) {
+	.top-row {
+		flex-direction: row;
+		width: 70%;
+		margin: auto;
+	}
+	.problem-solved {
+		flex-direction: row;
+		margin: auto; 
+		.rule img {margin-left: auto;}
+		padding-right: 20px;
+	}
+	.problem-solved-1 {text-align: right;}
+	.problem-solved-2 {padding-left: 50px;}
+	.groupthree {
+		flex-direction: row;
+		margin-top: 0;
+	}
+	.groupthree > div {
+		margin-right: 5%;
+		width: 30%;
+	}
+	.groupthree > div:last-child {
+		margin-right: 0;
+	}
+	.groupthree-content {
+		flex-direction: column;
+		justify-content: space-between;
+		p {flex-grow: 2;}
+	}
+	.survey-panel {order: 2; width: 40%; margin-bottom: 0;}
+}
+
+/* Common */
+
+#client-slider {
+	margin: 0 auto 60px auto;
+	max-width: 1500px;
+	background: #e0e0e0;
+}
+
+@media screen and (max-width: 1050px) {
+	#client-slider {display: none;}
+}
+
+
+/* Showreel */
+
+#homepage-showreel {
+	max-width: 1500px;
+    margin: 60px auto 60px auto;
+    background: black url("/img/backgrounds/background-image-5.jpg") no-repeat center left;
+    background-size: cover;
+    p:first-of-type {font-family: $foundry_baskerville;}
+    .button-next {@include white-button-small;}
+	.button-next:hover {@include rollover-button-small;}
+}
+
+.showreel {
+	margin-top: 60px;
+	a {color: #fff}
+	.rule img {width: 31px; margin: 0 0 30px 0;}
+}
+
+.showreel .slide {
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: 60px;
+	height: 600px;
+}
+
+@media screen and (min-width: 1075px) {
+
+}

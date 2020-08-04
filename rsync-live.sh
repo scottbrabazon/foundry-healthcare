@@ -1,0 +1,2 @@
+rsync -a --no-perms --no-o --no-g public_html/ foundry@s16.foundrycomms.co.uk:/srv/www/foundryhealthcare.co.uk/public_html
+rsync -a --no-perms --no-o --no-g craft/templates/ foundry@s16.foundrycomms.co.uk:/srv/www/foundryhealthcare.co.uk/craft/templates

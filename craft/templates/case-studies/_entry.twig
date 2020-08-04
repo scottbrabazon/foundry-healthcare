@@ -1,0 +1,176 @@
+{% set title = "Case Studies" %}
+
+{# work out previous and next pieces of work #}
+
+{% set nextEntry = entry.nextSibling %}
+{% if nextEntry is empty %}
+{% set nextEntry = entry.siblings(entry).first() %}
+{% endif %}
+
+{% set prevEntry = entry.prevSibling %}
+{% if prevEntry is empty %}
+{% set prevEntry = entry.siblings.last() %}
+{% endif %}
+
+{% extends "_layouts/site" %}
+
+{% block inlineCss %}
+
+
+
+<style>
+
+{% if entry.caseStudyBackgroundImage | length %}
+{% set image = entry.caseStudyBackgroundImage.first() %}
+	#{{ entry.slug }}-masthead {
+		background: black url({{ image.url }}) no-repeat bottom center;
+		background-size: cover;
+	}
+{% endif %}
+
+</style>
+
+{% endblock %}
+
+{% block main %}
+
+<!-- Masthead -->
+
+<header id="{{ entry.slug }}-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+
+		{% for headline in entry.bannerHeadlines %}
+
+		<div class="headlines">
+			<div class="offset-underline">
+				<h3>{{ headline.pageTitle }}</h3>
+				<hr />
+			</div>
+			<h1>{{ headline.bannerHeadline }}</h1>
+		</div>
+
+		{% endfor %}
+
+		<div class="client-logo">
+
+			{% if entry.clientLogo | length %}
+			{% set image = entry.clientLogo.first() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			{% endif %}
+
+		</div>
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<!-- Intro Copy -->
+
+<section id="kumho-intro" class="main-container">
+	<div class="centered intoduction-paragraph">
+		{{ entry.caseStudyIntroduction }}
+	</div>
+	<hr />
+
+	{% for listenPlanDeliverContent in entry.listenPlanDeliver %}
+
+	<div class="flexbox listen">
+		<div class="offset-underline">
+			<h2>Insight</h2>
+			<hr  />
+		</div>
+		<div class="listen-copy">
+			{{ listenPlanDeliverContent.listenCopy }}
+		</div>	
+	</div>
+	<hr />
+	<div class="flexbox plan">
+		<div class="offset-underline">
+			<h2>Strategy</h2>
+			<hr  />
+		</div>
+		<div class="plan-copy">
+			{{ listenPlanDeliverContent.planCopy }}
+		</div>	
+	</div>
+	<hr />
+	<div class="flexbox deliver">
+		<div class="offset-underline">
+			<h2>Creativity</h2>
+			<hr  />
+		</div>
+		<div class="deliver-copy">
+			{{ listenPlanDeliverContent.deliverCopy }}
+		</div>
+	</div>
+	<hr />
+
+	{% endfor %}
+
+</section>
+
+<!-- End Intro Copy -->
+
+
+<!-- Images -->
+
+<section class="main-container case-study-images">
+
+{% for caseStudyImage in entry.caseStudyImages %}
+
+	{% if caseStudyImage.type == "caseStudyPicture" %}
+
+	{% if caseStudyImage.imageType == "wide" %}
+		{% set imageClass = " wide" %}
+	{% endif %}
+
+	{% if caseStudyImage.imageType == "narrow" %}
+		{% set imageClass = " narrow" %}
+	{% endif %}
+
+	{% if caseStudyImage.image | length %}
+	{% set image = caseStudyImage.image.first() %}
+
+	<div class="inner-container work{{ imageClass }}">
+		<img src="{{ image.url }}">
+	</div>
+
+	{% endif %}
+
+	{% endif %}
+
+{% endfor %}
+
+</section>
+
+
+<!-- End Images -->
+
+
+<!-- Fixed Nav Buttons -->
+
+<!-- <div id="work-fixed-nav-buttons">
+	<ul class="section_tabs flexbox work-fixed-nav-buttons" data-350="opacity:0;" data-600="opacity:1;" data-5000="opacity:1;" data-5150="opacity:0;">
+		<li>
+			<a href="{{ prevEntry.url }}" class="nav-buttons flexbox fixed-previous-page">
+				<img src="/img/buttons/big/arrow-left.svg" alt="Prev" />
+				<h2>&nbsp;&nbsp;Prev</h2>
+			</a>
+		</li>
+		<div class="fixed-spacer">
+			<h2>&nbsp;</h2>
+		</div>
+		<li>
+			<a href="{{ nextEntry.url }}" class="nav-buttons flexbox fixed-next-page">
+				<h2>Next&nbsp;&nbsp;</h2>
+				<img src="/img/buttons/big/arrow-right.svg" alt="Next" />
+			</a>
+		</li>
+	</ul>
+</div> -->
+
+<!-- End Fixed Nav Buttons -->
+
+{% endblock main %}
+
+

@@ -1,0 +1,162 @@
+/* Typography */
+
+
+h1 {
+    font-family: $foundry_caecilia;
+    font-size: 2em;
+    line-height: 1.2em;
+    margin: 0 0 0.5em 0;
+}
+
+h2 {
+    font-family: $foundry_extra_bold;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    line-height: 0.9em;
+    margin: 0 0 0.5em 0;
+    font-weight: 100;
+}
+
+h3 {
+    font-family: $foundry_extra_bold;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    font-size: 1.25em;
+    margin: 0 0 0.5em 0;
+    font-weight: 100;
+}
+
+h4 {
+    font-family: $foundry_condensed_bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: 0 0 0.5em 0;
+    font-weight: 100;
+}
+
+p {
+    font-family: $foundry_baskerville;;
+    font-size: 0.8em;
+    line-height: 2.2em;
+    margin: 0 0 1em 0;
+    color: $foundry_grey;
+}
+
+a {
+    font-family: $foundry_baskerville;
+    font-size: inherit;
+    text-decoration: none;
+    color: $foundry_blue;
+}
+
+li, td, th {
+    font-size: inherit;
+    line-height: inherit;
+    list-style: initial;
+    font-family: $foundry_baskerville;
+    color: $foundry_grey;
+    font-size: 0.8em;
+    line-height: 2.2em;
+}
+
+td, th {
+    padding: 1em;
+    text-align: left;
+}
+
+th {
+    background-color: $foundry_blue;
+    color: #fff;
+}
+
+@media screen and (min-width: 1000px) {
+    h1 {font-size: 3em;}
+    h2 {font-size: 1.8em;}
+    h3 {font-size: 2em;}
+}
+
+
+/* General */
+
+* {outline: none;}
+
+body {
+  background-color: #fff;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    margin-top: 60px;
+    background: $foundry_blue;
+}
+
+.offset-underline {
+    display: inline-block;
+    hr {background: #000; width: 117px; margin: 16px 0 16px auto;}
+    h1, h2, h3 {padding-right: 30px;}
+}
+p:last-of-type {margin-bottom: 0;}
+ul {list-style: none;}
+img {display: block;}
+.flexbox {display: flex;}
+.main-container {
+    width: 100%;
+    max-width: 1075px;
+    margin: 0 auto;
+}
+.inner-container {
+    width: 70%;
+    margin: 0 auto;
+    img {width: 100%;}
+}
+#privacy-policy .inner-container { margin: 5em auto;}
+.container {position: relative; width: 100%;}
+.hideme {opacity: 0;}
+.rule img {margin-bottom: 30px;}
+.centered {
+    width: 70%;
+    margin: 0 auto;
+    .rule img {margin-left: auto; margin-right: auto;}
+    p:first-of-type {font-size: 1.2em; line-height: 1.8em;}
+    a {color: $foundry_blue;}
+}
+.work img {width: 100%;}
+.work {margin-bottom: 60px;}
+.intoduction-paragraph {margin-top: 60px; margin-bottom: 60px;}
+.embed-container {margin-bottom: 60px;}
+
+table {
+    margin: 4em auto;
+    width: 100% !important;
+    border: 1px solid #ddd;
+}
+.table-striped tbody tr:nth-child(2n+1) td {
+    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 1150px) {
+    .main-container {max-width: initial; width: 90%; margin: 0 5%;}
+    .inner-container {width: 100%;}
+}
+
+@media screen and (max-width: 800px) {
+    .centered {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        .rule img {margin-left: 0;}
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .centered {width: 100%;}
+}
+
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+}

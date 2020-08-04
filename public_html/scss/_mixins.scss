@@ -1,0 +1,165 @@
+@import "_variables.scss";
+
+/********* Small Buttons /*********/
+
+/* Black Button */
+
+@mixin black-button-small {
+    pointer-events: auto;
+    overflow: auto;
+    padding: 13px 20px 10px 20px;
+    float: left;
+    margin-top: 20px;
+    border: 1px solid $foundry_blue;
+    align-items: center;
+    height: 35px;
+    p, a, input[value="Send"] {
+        font-size: 13px;
+        color: #000;
+        text-transform: uppercase;
+        line-height: 34px;
+        float: left;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}
+
+/* White Button */
+
+@mixin white-button-small {
+    display: inline-block;
+    pointer-events: auto;
+    overflow: auto;
+    margin-top: 20px;
+    hr {width: 100%; margin: 0; background: #fff;}
+    p, a, input[value="Send"] {
+        font-family: $foundry_bold;
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 34px;
+        /*float: left;*/
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}
+
+/* Blue Button */
+
+@mixin blue-button-small {
+    display: inline-block;
+    pointer-events: auto;
+    overflow: auto;
+    margin-top: 20px;
+    hr {width: 100%; margin: 0; background: #00a8df;}
+    p, a, input[value="Send"] {
+        font-family: $foundry_extra_bold;
+        font-size: 18px;
+        color: #00a8df;
+        text-transform: uppercase;
+        line-height: 34px;
+        /*float: left;*/
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}
+
+/* Red Button */
+
+@mixin red-button-small {
+    background: transparent url("/img/buttons/small/arrow-right-no-border.svg") no-repeat right center;
+    pointer-events: auto;
+    overflow: auto;
+    padding: 10px 70px 10px 20px;
+    float: left;
+    margin-top: 20px;
+    border: 1px solid $foundry_blue;
+    align-items: center;
+    height: 35px;
+    p, a, input[value="Send"] {
+        font-size: 13px;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 34px;
+        float: left;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}
+
+
+/* Rollover Button */
+
+@mixin rollover-button-small {
+    pointer-events: auto;
+    overflow: auto;
+    float: left;
+    margin-top: 20px;
+    border: 1px solid $foundry_blue;
+    align-items: center;
+    height: 35px;
+    p, a, input[value="Send"] {
+        font-size: 13px;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 34px;
+        float: left;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}
+
+
+
+
+// prefix declarations
+@mixin prefixed($property, $value) {
+  @if $webkit == true {
+    -webkit-#{$property}: #{$value};
+  }
+
+  @if $moz == true {
+    -moz-#{$property}: #{$value};
+  }
+
+  @if $ms == true {
+    -ms-#{$property}: #{$value};
+  }
+
+  @if $o == true {
+    -o-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+// prefix keyframes
+@mixin keyframes($name) {
+  @if $webkit == true {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $moz == true {
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $ms == true {
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $o == true {
+    @-o-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}

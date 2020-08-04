@@ -1,0 +1,66 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Gotham Black';
+    src: url(../fonts/gotham-black.ttf);
+    src: url(../fonts/gothamhtf-black-webfont.woff2);
+    src: url(../fonts/GothamHTF-Black.otf);
+    src: url(../fonts/gothamhtf-black-webfont.woff);
+}
+
+
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url(../fonts/gotham-bold.oft);
+    src: url(../fonts/gotham-bold.ttf);
+    src: url(../fonts/gotham-bold.eot);
+    src: url(../fonts/gotham-bold.woff);
+}
+
+@font-face {
+    font-family: 'Gotham Medium Condensed';
+    src: url(../fonts/gotham-condensed-medium.otf);
+    src: url(../fonts/gotham-condensed-medium.eot);
+    src: url(../fonts/gotham-condensed-medium.ttf);
+    src: url(../fonts/gotham-condensed-medium.woff);
+}
+
+@font-face {
+    font-family: 'Gotham Medium Book';
+    src: url(../fonts/gotham-black.oft);
+    src: url(../fonts/gotham-book.eot);
+    src: url(../fonts/gotham-book.ttf);
+    src: url(../fonts/gotham-book.woff);
+}
+
+@font-face {
+    font-family: 'Gotham Light';
+    src: url(../fonts/gotham-black.otf);
+    src: url(../fonts/gotham-light.eot);
+    src: url(../fonts/gotham-light.ttf);
+    src: url(../fonts/gotham-light.woff);
+}
+
+@font-face {
+    font-family: 'Gotham Thin';
+    src: url(../fonts/gotham-thin.otf);
+    src: url(../fonts/gotham-thin.eot);
+    src: url(../fonts/gotham-thin.ttf);
+    src: url(../fonts/gotham-thin.woff);
+}
+
+$foundry_caecilia: 'PMN Caecilia W04';
+$foundry_baskerville: 'Libre Baskerville',serif;
+$foundry_extra_bold: 'Gotham Black',sans-serif,arial,sans-serif;
+$foundry_bold: 'Gotham Bold',sans-serif,arial,sans-serif;
+$foundry_condensed_bold: 'Gotham Medium Condensed',sans-serif,arial,sans-serif;
+$foundry_regular: 'Gotham Medium Book',sans-serif,arial,sans-serif;
+$foundry_light: 'Gotham Light',sans-serif,arial,sans-serif;
+$foundry_thin: 'Gotham Thin',sans-serif,arial,sans-serif;
+
+
+/* Colours */
+
+$foundry_blue: #00a8df;
+$foundry_grey: #5f6a71;
+$ppcp_orange: #f39530;

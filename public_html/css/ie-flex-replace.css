@@ -1,0 +1,138 @@
+/* this file is served only to older IE clients - those that do not support flexbox */
+
+
+/* navigation */
+
+.logo {
+  float: left;
+}
+
+.navigation-panel {
+  overflow: hidden;
+  display: block;
+}
+
+.navigation-menu {
+  display: block; /* overide the flex display property */
+  float: left;
+}
+
+.menu-links {
+  display: block;
+}
+
+.menu-links li {
+  float: left;
+}
+
+
+/* headline panel */
+
+.headlines .offset-underline {
+  margin-top: 100px;
+}
+
+#homepage-intro-copy .top-row {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+#homepage-intro-copy .top-row .problem-solved {
+  display: block;
+  float: left;
+  width: 70%;
+}
+
+#homepage-intro-copy .top-row .survey-panel {
+  display: block;
+  width: 23%;
+  float: left;
+}
+
+#case-studies .case-studies-title h3 {
+  display: block;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -10px;
+  background-color: #fff;
+  width: 12%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-studies-title .rule-2 {
+  display: none;
+}
+
+.groupthree {
+  display: block;
+  overflow: hidden;
+}
+
+.groupthree-content {
+  float: left;
+}
+
+.hfeed {
+  display: block;
+  overflow: hidden;
+}
+
+.hentry {
+  float: left;
+}
+
+.footer-row-2 {
+  display: block;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.footer-row-2 .contact-number {
+  float: left;
+  display: block;
+  width: 33.3333%;
+}
+
+.footer-row-2 .social {
+  float: left;
+  display: block;
+  width: 33.3333%;
+  padding: 0 0 40px 0;
+}
+
+.footer-row-2 .enquiry-button {
+  float: right;
+  text-align: right;
+  display: block;
+  width: 33.3333%;
+}
+
+#recent-posts-index {
+  overflow: hidden;
+  display: block;
+}
+
+.blog-post-list {
+  display: block;
+  float: left;
+}
+
+.contact-details {
+  display: block;
+  overflow: hidden;
+}
+
+#contact-masthead .address, #contact-masthead .telephone, #contact-masthead .email {
+  display: block;
+  float: left;
+  width: 33.3333%;
+}
+
+#contact-masthead .address img, #contact-masthead .telephone img, #contact-masthead .email img {
+  display: block;
+  float: left;
+  margin-bottom: 60px;
+}

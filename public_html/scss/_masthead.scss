@@ -1,0 +1,62 @@
+.masthead {
+    height: 532px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: $foundry_blue url( /img/backgrounds/general-background.jpg ) no-repeat bottom center;
+    background-size: cover;
+
+}
+.masthead-content {
+    align-items: flex-end;
+    padding-bottom: 50px;
+    hr {background: #fff;}
+    h1 {margin-bottom: 0;}
+    h3 {margin-bottom: 0; text-transform: initial; font-family: $foundry_extra_bold; text-transform: uppercase;}
+    .headlines {
+        flex-grow: 2;
+    }
+}
+
+.client-logo img {width: 250px;}
+
+@media screen and (max-width: 690px) {
+  .masthead {
+    height: auto;
+    min-height: 206px;
+    padding-top: 76px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+   .masthead-content {
+    h3 {padding-right: 0;}
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.2em;
+      line-height: 1.4;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    h1 {font-size: 2.8em;}
+    h2 {font-size: 1.8em;}
+    h3 {font-size: 2em;}
+    .headlines {
+        .offset-underline {
+            padding-right: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .client-logo {display: none;}
+}
+
+@media screen and (min-width: 1200px) {
+     /* h1 {width: 90%; margin: 0 10% 0 0;} */
+}

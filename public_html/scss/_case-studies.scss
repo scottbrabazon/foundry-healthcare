@@ -1,0 +1,333 @@
+/* General */
+
+.case-study-images {margin-top: 60px;}
+.col-1, .col-2 {width: 47.5%;}
+.col-1 {margin-right: 5%;}
+.col-1 p:first-of-type {font-family: $foundry_baskerville;}
+.case-study-introduction {width: 70%; margin: 0 15%; text-align: center;}
+.listen-copy, .plan-copy, .deliver-copy {
+	width: 60%;
+	p:first-of-type {font-family: $foundry_baskerville;}
+	li {
+	    font-family: $foundry_regular;
+	    font-size: 0.9em;
+	    line-height: 2.2em;
+	}
+}
+.listen, .plan, .deliver {
+	.offset-underline {width: 30%; text-align: right; padding-right: 30px;}
+}
+.listen, .plan, .deliver {margin-top: 60px;}
+#case-study-examples {
+	width: 100%; 
+	max-width: 1500px; 
+	margin: 0 auto 60px auto;
+	p:first-of-type {font-family: $foundry_baskerville;}
+}
+.full-width-image {
+	width: 100%;
+	img {width: 100%;}
+}
+.intoduction-paragraph {
+	p:first-of-type {font-family: $foundry_baskerville;}
+	p {font-size: 1em;}
+}
+.wide {width: 100%;}
+
+/* Work Intro */
+
+#work-masthead.masthead {
+	background: $foundry_blue url("/img/backgrounds/general-background.jpg") no-repeat top center; 
+	background-size: cover;
+	.masthead-content {width: 90%;}
+
+}
+#work-intro {margin-top: 60px;}
+
+
+/* Fixed Nav Buttons */
+
+#work-fixed-nav-buttons {
+	width: 100%;
+	position: fixed;
+	top: 40%;
+	left: 0;
+	padding: 0;
+	pointer-events: none;
+	ul {padding: 0; margin: 0;}
+	li {list-style: none;}
+}
+
+.work-fixed-nav-buttons {
+	width: 100%;
+	justify-content: space-between;
+	a {padding: 20px;}
+	h2 {
+		font-size: 1em;
+		font-family: $foundry_regular;
+		color: #fff;
+		margin: 0;
+		text-transform: uppercase;
+		margin-top: 6px;
+	}
+	img {
+		margin-top: 2px;
+	}
+	div {
+		width: 47.5%;
+		background: $foundry_blue;
+		padding: 15px 15px;
+	}
+	.fixed-previous-page {
+		flex-direction: row;
+	    background: $foundry_blue;
+	    background-size: cover;
+	    align-items: center;
+	    pointer-events: auto;
+	}
+	.fixed-next-page {
+		flex-direction: row;
+		flex-direction: row;
+	    background: $foundry_blue;
+	    background-size: cover;
+		justify-content: flex-end;
+		align-items: center;
+	    pointer-events: auto;
+	}
+	.fixed-spacer {
+		background: transparent;
+		width: auto;
+	}
+}
+
+
+
+/* Abellio */
+
+#abellio-masthead.masthead {
+	background: black url("/img/backgrounds/case-study-abellio.jpg") no-repeat bottom center; 
+	background-size: cover;
+	margin-top: 68px;
+	height: 532px;
+	position: relative;
+	z-index: 400;
+}
+
+#abellio-intro, #abellio1, #abellio2, #abellio3, #abellio4, #abellio5, #abellio6, #abellio7, #abellio8 {margin-top: 60px;}
+
+#abellio8 {
+	background: black url("/img/case-studies/textured-background.jpg") no-repeat bottom center;
+	background-size: cover;
+	padding: 60px 0;
+	.container {
+	    position: relative;
+	    width: 100%;
+	    height: 0;
+	    padding-bottom: 56.25%;
+	}
+	.video {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+/* Premier Pet Care Plan */
+
+#premier-pet-care-plan-masthead.masthead, #premier-veterinary-group-premier-pet-care-plan-masthead.masthead {
+	background-size: cover;
+	height: 532px;
+	position: relative;
+	z-index: 400;
+}
+
+#ppcp-intro, #ppcp1, #ppcp2, #ppcp3, #ppcp4, #ppcp5, #ppcp6, #ppcp7 {
+	margin-top: 60px;
+	h2 {margin-left: -50px;}
+}
+
+#ppcp1 {
+	background-size: cover;
+	.row-1 {flex-direction: row;}
+	.col-1 {padding: 60px 0;}
+	img {margin-top: 70px;}
+}
+
+#ppcp3 {
+	img {width: 100%;}
+	.col-1, .col-2 {margin: 0; width: 50%;}
+}
+#ppcp4 {
+	img {width: 100%;}
+	.col-1, .col-2 {margin: 0; width: 50%;}
+}
+#ppcp7 {
+	img {width: 100%;}
+	.col-1, .col-2 {margin: 0; width: 50%;}
+}
+
+
+/* KMC */
+
+#kerramax-care-masthead.masthead {
+	background-size: cover;
+	height: 532px;
+	position: relative;
+	z-index: 400;
+}
+
+#kmc-intro, #kmc1, #kmc2, #kmc3, #kmc4, #kmc5, #kmc6, #kmc7 {
+	margin-top: 60px;
+	h2 {margin-left: -50px;}
+}
+
+
+/* Sunsense */
+
+#sun-sense-masthead.masthead {
+	background-size: cover;
+	height: 532px;
+	position: relative;
+	z-index: 400;
+}
+
+#sunsense-intro, #sunsense1, #sunsense2, #sunsense3, #sunsense4, #sunsense5, #sunsense6, #sunsense7 {
+	margin-top: 60px;
+	h2 {margin-left: -50px;}
+}
+
+/* Thea */
+
+#thea-pharmaceuticals-insight-masthead.masthead {
+	background-size: cover;
+	height: 532px;
+	position: relative;
+	z-index: 400;
+}
+
+#thea-intro, #thea1, #thea2, #thea3, #thea4, #thea5, #thea6, #thea7 {
+	margin-top: 60px;
+	h2 {margin-left: -50px;}
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+
+	/* General */
+
+	.col-1, .col-2 {width: 100%;}
+	.col-1 {margin-right: 0;}
+	.masthead-content {flex-direction: column; align-items: flex-start;}
+	.headlines {order: 2; margin-top: 20px;}
+	.client-logo {order: 1;}
+	.listen, .plan, .deliver {flex-direction: column;}
+	.listen-copy, .plan-copy, .deliver-copy {width: 100%;}
+	.listen h2, .plan h2, .deliver h2 {width: 100%; text-align: left; padding-right: 0;}
+
+	
+	/* Albemarle Bond */
+
+	#albemarle-bond1 {
+		.row-1 {flex-direction: column;}
+		background: none;
+		height: auto;
+		text-align: left;
+		}
+
+	/* Kumho */
+
+	#kumho1 {
+		.main-container {flex-direction: column;}
+	}
+	#kumho4 {
+		.full-background-left-col {
+			.col-1 {width: 100%;}
+			height: 900px;
+		}
+	}
+	#kumho6 {
+		.row-1 {flex-direction: column;}
+}
+	#kumho7 {
+		.row-2 {flex-direction: column;}
+		.col-2 {margin-top: 60px;}
+	}
+	#kumho8 {
+		.col-1 {padding-top: 20px;}
+		.col-2 {
+			img {width: 80%; margin: 0 10%;}
+		}
+		.row-1 {flex-direction: column;}
+		.row-2 {
+			img {width: 80%; margin: 0 10%;}
+			flex-direction: column;
+		}
+	}
+	#kumho9 {
+		margin-top: 60px;
+		.col-2 {margin-top: 20px;}
+		.row-1 {
+			flex-direction: column;
+			img {width: 50%; margin: 0 25%;}
+		}
+		.row-2 {
+			flex-direction: column; margin-top: 20px;
+			img {width: 100%;}
+		}
+	}
+
+	/* Premier Pet Care Plan */
+
+	#ppcp1 {
+		.row-1 {flex-direction: column;}
+	}
+	#ppcp3 {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+		.col-2 {padding-top: 60px;}
+	}
+	#ppcp4 {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+	}
+	#ppcp7 {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+	}
+
+	/* KMC */
+
+	#kmc {
+		.row-1 {flex-direction: column;}
+	}
+	#kmc {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+		.col-2 {padding-top: 60px;}
+	}
+	#kmc {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+	}
+	#kmc {
+		.row-1 {flex-direction: column;}
+		.col-1, .col-2 {width: 100%;}
+	}
+}
+
+@media screen and (max-width: 360px) {
+    #work-masthead.masthead {
+    	margin-top: 63px;}
+    #ppcp1 {
+    	background: black url("/img/case-studies/ppcp/ppcp1anarrow.jpg") no-repeat top right;
+    	background-size: cover;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+    #work-fixed-nav-buttons {display: none;}
+}

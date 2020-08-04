@@ -1,0 +1,147 @@
+{% set title = "Design, advertising and digital agency in Manchester" %}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+<!--div class="gif-masthead-450px">
+	<img src="/img/video-optimised-450px.gif" alt="sparks" />
+</div>
+<div class="gif-masthead-750px">
+	<img src="/img/video-optimised-750px.gif" alt="sparks" />
+</div>
+<div class="gif-masthead-1090px">
+	<img src="/img/video-optimised-1090px.gif" alt="sparks" />
+</div-->
+<!--div class="video-masthead">
+	<video autoplay playsinline muted loop><source src="/img/fhc-intro-narrow.mp4" type="video/mp4"></video>
+</div-->
+
+<!-- Masthead -->
+
+<header id="homepage-masthead" class="masthead flexbox">
+	<div class="masthead-content main-container flexbox">
+    
+    {% for headline in entry.bannerHeadlines %}
+    
+    <div class="banner-slide">
+    
+    {% if headline.style == "standard" %}
+    <div class="video-overlay">&nbsp;</div>
+    <video autoplay playsinline muted loop><source src="/img/fhc-intro-narrow.mp4" type="video/mp4"></video>
+    {% endif %}
+
+		<div class="headlines{% if headline.style == "withImage" %} headlines--with-image{% endif %}">
+      <div class="offset-underline">
+				<h3>{{ headline.pageTitle }}</h3>
+				<hr />
+			</div>
+
+			<h1>{{ headline.bannerHeadline }}</h1>
+      <a href="{{ headline.linkTarget.first() }}"><div class="button-next"><p>{{ headline.linkText }}</p><hr></div></a>
+		</div>
+    
+    {% if headline.style == "withImage" %}
+    {% if headline.image | length %}
+    {% set headlineImage = headline.image.first() %}
+    {% if headlineImage %}<div class="headlines-image"><img src="{{ headlineImage.url }}"></div>{% endif %}
+    {% endif %}
+    {% endif %}
+    
+  </div>
+  
+  {% endfor %}
+
+	</div>
+</header>	
+
+<!-- End Masthead -->
+
+<main class="main-container">
+
+<!-- Intro Copy -->
+
+<div id="homepage-intro-copy">
+	<div> 
+		<div class="flexbox top-row">
+			<div class="problem-solved centered">
+				{% for paragraph in entry.generalParagraph %}
+				<div class="offset-underline">
+					<h2>{{ paragraph.paragraphHeadline }}</h2>
+					<hr />
+				</div>	
+				{{ paragraph.paragraphCopy }}
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="groupthree flexbox">
+			{% for threeColumnParagraph in entry.threeColumnParagraphs %}
+			<div class="groupthree-content">
+				<div class="offset-underline">
+					<h2>{{ threeColumnParagraph.threeColumnParagraphHeadline }}</h2>
+					<hr />
+				</div>
+				{{ threeColumnParagraph.threeColumnParagraphCopy }}
+				<a href="/approach">
+					<div class="button-next">
+						<p>Read More</p>
+						<hr  />
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<!-- End Intro Copy -->
+
+</main>	
+
+<!-- Case Studes -->
+
+<div id="case-studies">
+	<div class="flexbox case-studies-title">
+		<hr class="rule-1"/><h3>FEATURED&nbsp;WORK</h3><hr class="rule-2" />
+	</div>
+	<div class="case-studes-examples clearfix">
+		{% for caseStudy in craft.entries.section('caseStudies').limit(6) %}
+		<div class="case-studes-example">
+			<a href="{{caseStudy.url}}">
+
+				{% if caseStudy.caseStudyPanelImage | length %}
+    			{% set image = caseStudy.caseStudyPanelImage.first() %}
+        			<img src="{{ image.url }}" alt="{{caseStudy.title}}">
+				{% endif %}
+
+				<div class="hvr-bounce-to-top project-name-panel">
+					<p class="project-info"><span class="project-client">{{caseStudy.title}}</span><br><span class="project-title">{{caseStudy.caseStudySubtitle}}</span></p>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<!-- End Case Studes -->
+
+<!-- Client Slider -->
+
+<div id="client-slider">
+	<section class="center slider">
+		{% set clients = craft.entries.section('clients') %}
+		{% for client in clients %}
+		<div>
+			{% if client.clientLogo | length %}
+			{% set image = client.clientLogo.first() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			{% endif %}
+		</div>
+		{% endfor %}
+	</section>
+</div>	
+
+<!-- End Client Slider -->
+
+{% endblock main %}
